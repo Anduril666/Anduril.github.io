@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="CCF-A（或高认可度）： 1、计算机体系结构&#x2F;高性能计算&#x2F;存储系统 会议： ASPLOS: Architectural Support for Programming Languages and Operating Systems PPoPP: ACM SIGPLAN Symposium on Principles &amp; Practice of Parallel Progr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见会议期刊总结">
+<meta property="og:url" content="http://example.com/2024/04/21/%E5%B8%B8%E8%A7%81%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="再不记记就忘了">
+<meta property="og:description" content="CCF-A（或高认可度）： 1、计算机体系结构&#x2F;高性能计算&#x2F;存储系统 会议： ASPLOS: Architectural Support for Programming Languages and Operating Systems PPoPP: ACM SIGPLAN Symposium on Principles &amp; Practice of Parallel Progr">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-21T04:09:53.874Z">
+<meta property="article:modified_time" content="2024-04-21T04:11:49.116Z">
+<meta property="article:author" content="Anduril">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/04/21/%E5%B8%B8%E8%A7%81%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>常见会议期刊总结 | 再不记记就忘了</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">再不记记就忘了</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/21/%E5%B8%B8%E8%A7%81%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Anduril">
+      <meta itemprop="description" content="这个人很懒，什么都没写">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再不记记就忘了">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          常见会议期刊总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-21 12:09:53 / 修改时间：12:11:49" itemprop="dateCreated datePublished" datetime="2024-04-21T12:09:53+08:00">2024-04-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="ccf-a或高认可度">CCF-A（或高认可度）：</h3>
+<h4
+id="计算机体系结构高性能计算存储系统">1、计算机体系结构/高性能计算/存储系统</h4>
+<h4 id="会议">会议：</h4>
+<h4
+id="asplos-architectural-support-for-programming-languages-and-operating-systems">ASPLOS:
+Architectural Support for Programming Languages and Operating
+Systems</h4>
+<h4
+id="ppopp-acm-sigplan-symposium-on-principles-practice-of-parallel-programming">PPoPP:
+ACM SIGPLAN Symposium on Principles &amp; Practice of Parallel
+Programming</h4>
+<h4 id="fast-usenix-conference-on-file-and-storage-technologies">FAST:
+USENIX Conference on File and Storage Technologies</h4>
+<h4 id="dac-design-automation-conference">DAC : Design Automation
+Conference</h4>
+<h4
+id="hpca-ieee-international-symposium-on-high-performance-computer-architecture">HPCA:
+IEEE International Symposium on High Performance Computer
+Architecture</h4>
+<h4
+id="micro-ieeeacm-international-symposium-on-microarchitecture">MICRO:
+IEEE/ACM International Symposium on Microarchitecture</h4>
+<h4
+id="sc-international-conference-for-high-performance-computing-networking-storage-and-analysis">SC:
+International Conference for High Performance Computing, Networking,
+Storage, and Analysis</h4>
+<h4 id="isca-international-symposium-on-computer-architecture">ISCA:
+International Symposium on Computer Architecture</h4>
+<h4 id="usenix-atc-usenix-annual-technical-conference">USENIX ATC:
+USENIX Annual Technical Conference</h4>
+<h4 id="eurosys-european-conference-on-computer-systems">EuroSys:
+European Conference on Computer Systems</h4>
+<h4 id="期刊">期刊：</h4>
+<h4 id="tocs-acm-transactions-on-computer-systems">TOCS: ACM
+Transactions on Computer Systems</h4>
+<h4 id="tos-acm-transactions-on-storage">TOS: ACM Transactions on
+Storage</h4>
+<h4
+id="tcad-ieee-transactions-on-computer-aided-design-of-integrated-circuits-and-systems">TCAD:
+IEEE Transactions on Computer-Aided Design of Integrated Circuits and
+Systems</h4>
+<h4 id="tc-ieee-transactions-on-computers">TC: IEEE Transactions on
+Computers</h4>
+<h4
+id="tpds-ieee-transactions-on-parallel-and-distributed-systems">TPDS:
+IEEE Transactions on Parallel and Distributed Systems</h4>
+<h4
+id="taco-acm-transactions-on-architecture-and-code-optimization">TACO:
+ACM Transactions on Architecture and Code Optimization</h4>
+<h4 id="数据库数据挖掘内容检索">2、数据库/数据挖掘/内容检索</h4>
+<h4 id="会议-1">会议：</h4>
+<h4 id="sigmod-acm-sigmod-conference">SIGMOD: ACM SIGMOD Conference</h4>
+<h4
+id="sigkdd-acm-sigkdd-conference-on-knowledge-discovery-and-data-mining">SIGKDD:
+ACM SIGKDD Conference on Knowledge Discovery and Data Mining</h4>
+<h4 id="icde-ieee-international-conference-on-data-engineering">ICDE:
+IEEE International Conference on Data Engineering</h4>
+<h4
+id="sigir-international-acm-sigir-conference-on-research-and-development-in-information-retrieval">SIGIR:
+International ACM SIGIR Conference on Research and Development in
+Information Retrieval</h4>
+<h4 id="vldb-international-conference-on-very-large-data-bases">VLDB:
+International Conference on Very Large Data Bases</h4>
+<h4 id="期刊-1">期刊：</h4>
+<h4 id="tods-acm-transactions-on-database-systems">TODS: ACM
+Transactions on Database Systems</h4>
+<h4 id="tois-acm-transactions-on-information-systems">TOIS: ACM
+Transactions on Information Systems</h4>
+<h4 id="tkde-ieee-transactions-on-knowledge-and-data-engineering">TKDE:
+IEEE Transactions on Knowledge and Data Engineering</h4>
+<h4 id="vldbj-the-vldb-journal">VLDBJ: The VLDB Journal</h4>
+<h4 id="人工智能">3、人工智能：</h4>
+<h4 id="会议-2">会议：</h4>
+<h4 id="aaai-aaai-conference-on-artificial-intelligence">AAAI: AAAI
+Conference on Artificial Intelligence</h4>
+<h4
+id="neurips-conference-on-neural-information-processing-systems">NeurIPS:
+Conference on Neural Information Processing Systems</h4>
+<h4
+id="acl-annual-meeting-of-the-association-for-computational-linguistics">ACL:
+Annual Meeting of the Association for Computational Linguistics</h4>
+<h4
+id="cvpr-ieeecvf-computer-vision-and-pattern-recognition-conference">CVPR:
+IEEE/CVF Computer Vision and Pattern Recognition Conference</h4>
+<h4 id="iccv-international-conference-on-computer-vision">ICCV:
+International Conference on Computer Vision</h4>
+<h4 id="icml-international-conference-on-machine-learning">ICML:
+International Conference on Machine Learning</h4>
+<h4
+id="ijcai-international-joint-conference-on-artificial-intelligence">IJCAI:
+International Joint Conference on Artificial Intelligence</h4>
+<h4
+id="iclr-international-conference-on-learning-representations高认可">ICLR:
+International Conference On Learning Representations（高认可）</h4>
+<h4 id="eccv-european-conference-on-computer-vision较高认可">ECCV:
+European Conference on Computer Vision（较高认可）</h4>
+<h4
+id="emnlp-conference-on-empirical-methods-in-natural-language-processing较高认可">EMNLP:
+Conference on Empirical Methods in Natural Language
+Processing（较高认可）</h4>
+<h4 id="期刊-2">期刊：</h4>
+<h4 id="ai-artificial-intelligence">AI: Artificial Intelligence</h4>
+<h4
+id="tpami-ieee-transactions-on-pattern-analysis-and-machine-intelligence">TPAMI:
+IEEE Transactions on Pattern Analysis and Machine Intelligence</h4>
+<h4 id="ijcv-international-journal-of-computer-vision">IJCV:
+International Journal of Computer Vision</h4>
+<h4 id="jmlr-journal-of-machine-learning-research">JMLR: Journal of
+Machine Learning Research</h4>
+<h4 id="交叉综合新兴">4、交叉/综合/新兴：</h4>
+<h4 id="会议-3">会议：</h4>
+<h4 id="www-international-world-wide-web-conference">WWW: International
+World Wide Web Conference</h4>
+<h4 id="rtss-ieee-real-time-systems-symposium">RTSS: IEEE Real-Time
+Systems Symposium</h4>
+<h4 id="wine-conference-on-web-and-internet-economics">WINE: Conference
+on Web and Internet Economics</h4>
+<h4 id="期刊-3">期刊：</h4>
+<h4 id="jacm-journal-of-the-acm">JACM: Journal of the ACM</h4>
+<h4 id="proc.-ieee-proceedings-of-the-ieee">Proc. IEEE: Proceedings of
+the IEEE</h4>
+<h4 id="scis-science-china-information-sciences">SCIS: Science China
+Information Sciences</h4>
+<h4 id="计算机网络">5、计算机网络：</h4>
+<h4 id="会议-4">会议：</h4>
+<h4
+id="sigcomm-acm-international-conference-on-applications-technologies-architectures-and-protocols-for-computer-communication">SIGCOMM:
+ACM International Conference on Applications, Technologies,
+Architectures, and Protocols for Computer Communication</h4>
+<h4
+id="mobicom-acm-international-conference-on-mobile-computing-and-networking">MobiCom:
+ACM International Conference on Mobile Computing and Networking</h4>
+<h4
+id="infocom-ieee-international-conference-on-computer-communications">INFOCOM:
+IEEE International Conference on Computer Communications</h4>
+<h4
+id="nsdi-symposium-on-network-system-design-and-implementation">NSDI:
+Symposium on Network System Design and Implementation</h4>
+<h4 id="期刊-4">期刊：</h4>
+<h4 id="jsac-ieee-journal-on-selected-areas-in-communications">JSAC:
+IEEE Journal on Selected Areas in Communications</h4>
+<h4 id="tmc-ieee-transactions-on-mobile-computing">TMC: IEEE
+Transactions on Mobile Computing</h4>
+<h4 id="ton-ieeeacm-transactions-on-networking">TON: IEEE/ACM
+Transactions on Networking</h4>
+<h4 id="网络与信息安全">6、网络与信息安全：</h4>
+<h4 id="会议-5">会议：</h4>
+<h4 id="ccs-acm-conference-on-computer-and-communications-security">CCS:
+ACM Conference on Computer and Communications Security</h4>
+<h4
+id="eurocrypt-international-conference-on-the-theory-and-applications-of-cryptographic-techniques">EUROCRYPT:
+International Conference on the Theory and Applications of Cryptographic
+Techniques</h4>
+<h4 id="sp-ieee-symposium-on-security-and-privacy">S&amp;P: IEEE
+Symposium on Security and Privacy</h4>
+<h4 id="crypto-international-cryptology-conference">CRYPTO:
+International Cryptology Conference</h4>
+<h4 id="usenix-security-usenix-security-symposium">USENIX Security:
+USENIX Security Symposium</h4>
+<h4 id="ndss-network-and-distributed-system-security-symposium">NDSS:
+Network and Distributed System Security Symposium</h4>
+<h4 id="期刊-5">期刊：</h4>
+<h4 id="tdsc-ieee-transactions-on-dependable-and-secure-computing">TDSC:
+IEEE Transactions on Dependable and Secure Computing</h4>
+<h4
+id="tifs-ieee-transactions-on-information-forensics-and-security">TIFS:
+IEEE Transactions on Information Forensics and Security</h4>
+<h4 id="journal-of-cryptology">Journal of Cryptology</h4>
+<h4
+id="软件工程系统软件程序设计语言">7、软件工程/系统软件/程序设计语言：</h4>
+<h4 id="会议-6">会议：</h4>
+<h4
+id="pldi-acm-sigplan-conference-on-programming-language-design-and-implementation">PLDI:
+ACM SIGPLAN Conference on Programming Language Design and
+Implementation</h4>
+<h4
+id="popl-acm-sigplan-sigact-symposium-on-principles-of-programming-languages">POPL:
+ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages</h4>
+<h4
+id="fseesec-acm-joint-european-software-engineering-conference-and-symposium-on-the-foundations-of-software-engineering">FSE/ESEC:
+ACM Joint European Software Engineering Conference and Symposium on the
+Foundations of Software Engineering</h4>
+<h4 id="sosp-acm-symposium-on-operating-systems-principles">SOSP: ACM
+Symposium on Operating Systems Principles</h4>
+<h4
+id="oopsla-conference-on-object-oriented-programming-systems-languages-and-applications">OOPSLA:
+Conference on Object-Oriented Programming Systems, Languages, and
+Applications</h4>
+<h4
+id="ase-international-conference-on-automated-software-engineering">ASE:
+International Conference on Automated Software Engineering</h4>
+<h4 id="icse-international-conference-on-software-engineering">ICSE:
+International Conference on Software Engineering</h4>
+<h4
+id="issta-international-symposium-on-software-testing-and-analysis">ISSTA:
+International Symposium on Software Testing and Analysis</h4>
+<h4
+id="osdi-usenix-symposium-on-operating-systems-design-and-implementation">OSDI:
+USENIX Symposium on Operating Systems Design and Implementation</h4>
+<h4 id="fm-international-symposium-on-formal-methods">FM: International
+Symposium on Formal Methods</h4>
+<h4 id="计算机科学理论">8、计算机科学理论：</h4>
+<h4 id="会议-7">会议：</h4>
+<h4 id="stoc-acm-symposium-on-the-theory-of-computing">STOC: ACM
+Symposium on the Theory of Computing</h4>
+<h4 id="soda-acm-siam-symposium-on-discrete-algorithms">SODA: ACM-SIAM
+Symposium on Discrete Algorithms</h4>
+<h4
+id="cav-international-conference-on-computer-aided-verification">CAV:
+International Conference on Computer Aided Verification</h4>
+<h4
+id="focs-ieee-annual-symposium-on-foundations-of-computer-science">FOCS:
+IEEE Annual Symposium on Foundations of Computer Science</h4>
+<h4 id="lics-acmieee-symposium-on-logic-in-computer-science">LICS:
+ACM/IEEE Symposium on Logic in Computer Science</h4>
+<h4 id="期刊-6">期刊：</h4>
+<h4 id="tit-ieee-transactions-on-information-theory">TIT: IEEE
+Transactions on Information Theory</h4>
+<h4 id="iandc-information-and-computation">IANDC: Information and
+Computation</h4>
+<h4 id="sicomp-siam-journal-on-computing">SICOMP: SIAM Journal on
+Computing</h4>
+<h4 id="计算机图形学与多媒体">9、计算机图形学与多媒体：</h4>
+<h4 id="会议-8">会议：</h4>
+<h4 id="acm-mm-acm-international-conference-on-multimedia">ACM MM: ACM
+International Conference on Multimedia</h4>
+<h4
+id="siggraph-acm-special-interest-group-on-computer-graphics">SIGGRAPH:
+ACM Special Interest Group on Computer Graphics</h4>
+<h4 id="vr-ieee-virtual-reality">VR: IEEE Virtual Reality</h4>
+<h4 id="ieee-vis-ieee-visualization-conference">IEEE VIS: IEEE
+Visualization Conference</h4>
+<h4 id="期刊-7">期刊：</h4>
+<h4 id="tog-acm-transactions-on-graphics">TOG: ACM Transactions on
+Graphics</h4>
+<h4 id="tip-ieee-transactions-on-image-processing">TIP: IEEE
+Transactions on Image Processing</h4>
+<h4
+id="tvcg-ieee-transactions-on-visualization-and-computer-graphics">TVCG:
+IEEE Transactions on Visualization and Computer Graphics</h4>
+<h4 id="人机交互与普适计算">10、人机交互与普适计算：</h4>
+<h4 id="会议-9">会议：</h4>
+<h4
+id="cscw-acm-conference-on-computer-supported-cooperative-work-and-social-computing">CSCW:
+ACM Conference On Computer-Supported Cooperative Work And Social
+Computing</h4>
+<h4 id="chi-acm-conference-on-human-factors-in-computing-systems">CHI:
+ACM Conference on Human Factors in Computing Systems</h4>
+<h4
+id="ubicomp-acm-international-joint-conference-on-pervasive-and-ubiquitous-computing">UbiComp:
+ACM international joint conference on Pervasive and Ubiquitous
+Computing</h4>
+<h4
+id="uist-acm-symposium-on-user-interface-software-and-technology">UIST:
+ACM Symposium on User Interface Software and Technology</h4>
+<h4 id="期刊-8">期刊：</h4>
+<h4 id="tochi-acm-transactions-on-computer-human-interaction">TOCHI: ACM
+Transactions on Computer-Human Interaction</h4>
+<h4 id="ijhcs-international-journal-of-human-computer-studies">IJHCS:
+International Journal of Human-Computer Studies</h4>
+<h3
+id="ccf推荐会议和期刊完整ccf官网也有call4papers---ccf推荐列表">CCF推荐会议和期刊完整（CCF官网也有）：<a
+target="_blank" rel="noopener" href="http://123.57.137.208/ccf/ccf-1.jsp">Call4Papers -
+CCF推荐列表</a></h3>
+<h3 id="完整内容dblp-browse-conferences-workshops">完整内容：<a
+target="_blank" rel="noopener" href="https://dblp.org/db/conf/index.html">dblp: Browse Conferences
+&amp; Workshops</a></h3>
+<h3
+id="为什么计算机学术界认可顶级会议论文而其他领域几乎都是只认可顶级期刊---知乎-zhihu.com"><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/54142181/answer/2545936843">为什么计算机学术界认可顶级会议论文，而其他领域几乎都是只认可顶级期刊？
+- 知乎 (zhihu.com)</a></h3>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Anduril
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2024/04/21/%E5%B8%B8%E8%A7%81%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A%E6%80%BB%E7%BB%93/" title="常见会议期刊总结">http://example.com/2024/04/21/常见会议期刊总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/05/17/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/04/21/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/" rel="next" title="数据降维">
+      数据降维 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ccf-a%E6%88%96%E9%AB%98%E8%AE%A4%E5%8F%AF%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">CCF-A（或高认可度）：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.</span> <span class="nav-text">1、计算机体系结构&#x2F;高性能计算&#x2F;存储系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE"><span class="nav-number">1.2.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asplos-architectural-support-for-programming-languages-and-operating-systems"><span class="nav-number">1.3.</span> <span class="nav-text">ASPLOS:
+Architectural Support for Programming Languages and Operating
+Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ppopp-acm-sigplan-symposium-on-principles-practice-of-parallel-programming"><span class="nav-number">1.4.</span> <span class="nav-text">PPoPP:
+ACM SIGPLAN Symposium on Principles &amp; Practice of Parallel
+Programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fast-usenix-conference-on-file-and-storage-technologies"><span class="nav-number">1.5.</span> <span class="nav-text">FAST:
+USENIX Conference on File and Storage Technologies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dac-design-automation-conference"><span class="nav-number">1.6.</span> <span class="nav-text">DAC : Design Automation
+Conference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hpca-ieee-international-symposium-on-high-performance-computer-architecture"><span class="nav-number">1.7.</span> <span class="nav-text">HPCA:
+IEEE International Symposium on High Performance Computer
+Architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#micro-ieeeacm-international-symposium-on-microarchitecture"><span class="nav-number">1.8.</span> <span class="nav-text">MICRO:
+IEEE&#x2F;ACM International Symposium on Microarchitecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sc-international-conference-for-high-performance-computing-networking-storage-and-analysis"><span class="nav-number">1.9.</span> <span class="nav-text">SC:
+International Conference for High Performance Computing, Networking,
+Storage, and Analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isca-international-symposium-on-computer-architecture"><span class="nav-number">1.10.</span> <span class="nav-text">ISCA:
+International Symposium on Computer Architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usenix-atc-usenix-annual-technical-conference"><span class="nav-number">1.11.</span> <span class="nav-text">USENIX ATC:
+USENIX Annual Technical Conference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eurosys-european-conference-on-computer-systems"><span class="nav-number">1.12.</span> <span class="nav-text">EuroSys:
+European Conference on Computer Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A"><span class="nav-number">1.13.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tocs-acm-transactions-on-computer-systems"><span class="nav-number">1.14.</span> <span class="nav-text">TOCS: ACM
+Transactions on Computer Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tos-acm-transactions-on-storage"><span class="nav-number">1.15.</span> <span class="nav-text">TOS: ACM Transactions on
+Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tcad-ieee-transactions-on-computer-aided-design-of-integrated-circuits-and-systems"><span class="nav-number">1.16.</span> <span class="nav-text">TCAD:
+IEEE Transactions on Computer-Aided Design of Integrated Circuits and
+Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tc-ieee-transactions-on-computers"><span class="nav-number">1.17.</span> <span class="nav-text">TC: IEEE Transactions on
+Computers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tpds-ieee-transactions-on-parallel-and-distributed-systems"><span class="nav-number">1.18.</span> <span class="nav-text">TPDS:
+IEEE Transactions on Parallel and Distributed Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#taco-acm-transactions-on-architecture-and-code-optimization"><span class="nav-number">1.19.</span> <span class="nav-text">TACO:
+ACM Transactions on Architecture and Code Optimization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%86%85%E5%AE%B9%E6%A3%80%E7%B4%A2"><span class="nav-number">1.20.</span> <span class="nav-text">2、数据库&#x2F;数据挖掘&#x2F;内容检索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-1"><span class="nav-number">1.21.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sigmod-acm-sigmod-conference"><span class="nav-number">1.22.</span> <span class="nav-text">SIGMOD: ACM SIGMOD Conference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sigkdd-acm-sigkdd-conference-on-knowledge-discovery-and-data-mining"><span class="nav-number">1.23.</span> <span class="nav-text">SIGKDD:
+ACM SIGKDD Conference on Knowledge Discovery and Data Mining</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#icde-ieee-international-conference-on-data-engineering"><span class="nav-number">1.24.</span> <span class="nav-text">ICDE:
+IEEE International Conference on Data Engineering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sigir-international-acm-sigir-conference-on-research-and-development-in-information-retrieval"><span class="nav-number">1.25.</span> <span class="nav-text">SIGIR:
+International ACM SIGIR Conference on Research and Development in
+Information Retrieval</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vldb-international-conference-on-very-large-data-bases"><span class="nav-number">1.26.</span> <span class="nav-text">VLDB:
+International Conference on Very Large Data Bases</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-1"><span class="nav-number">1.27.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tods-acm-transactions-on-database-systems"><span class="nav-number">1.28.</span> <span class="nav-text">TODS: ACM
+Transactions on Database Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tois-acm-transactions-on-information-systems"><span class="nav-number">1.29.</span> <span class="nav-text">TOIS: ACM
+Transactions on Information Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tkde-ieee-transactions-on-knowledge-and-data-engineering"><span class="nav-number">1.30.</span> <span class="nav-text">TKDE:
+IEEE Transactions on Knowledge and Data Engineering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vldbj-the-vldb-journal"><span class="nav-number">1.31.</span> <span class="nav-text">VLDBJ: The VLDB Journal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD"><span class="nav-number">1.32.</span> <span class="nav-text">3、人工智能：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-2"><span class="nav-number">1.33.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aaai-aaai-conference-on-artificial-intelligence"><span class="nav-number">1.34.</span> <span class="nav-text">AAAI: AAAI
+Conference on Artificial Intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#neurips-conference-on-neural-information-processing-systems"><span class="nav-number">1.35.</span> <span class="nav-text">NeurIPS:
+Conference on Neural Information Processing Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#acl-annual-meeting-of-the-association-for-computational-linguistics"><span class="nav-number">1.36.</span> <span class="nav-text">ACL:
+Annual Meeting of the Association for Computational Linguistics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cvpr-ieeecvf-computer-vision-and-pattern-recognition-conference"><span class="nav-number">1.37.</span> <span class="nav-text">CVPR:
+IEEE&#x2F;CVF Computer Vision and Pattern Recognition Conference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iccv-international-conference-on-computer-vision"><span class="nav-number">1.38.</span> <span class="nav-text">ICCV:
+International Conference on Computer Vision</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#icml-international-conference-on-machine-learning"><span class="nav-number">1.39.</span> <span class="nav-text">ICML:
+International Conference on Machine Learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ijcai-international-joint-conference-on-artificial-intelligence"><span class="nav-number">1.40.</span> <span class="nav-text">IJCAI:
+International Joint Conference on Artificial Intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iclr-international-conference-on-learning-representations%E9%AB%98%E8%AE%A4%E5%8F%AF"><span class="nav-number">1.41.</span> <span class="nav-text">ICLR:
+International Conference On Learning Representations（高认可）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eccv-european-conference-on-computer-vision%E8%BE%83%E9%AB%98%E8%AE%A4%E5%8F%AF"><span class="nav-number">1.42.</span> <span class="nav-text">ECCV:
+European Conference on Computer Vision（较高认可）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emnlp-conference-on-empirical-methods-in-natural-language-processing%E8%BE%83%E9%AB%98%E8%AE%A4%E5%8F%AF"><span class="nav-number">1.43.</span> <span class="nav-text">EMNLP:
+Conference on Empirical Methods in Natural Language
+Processing（较高认可）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-2"><span class="nav-number">1.44.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ai-artificial-intelligence"><span class="nav-number">1.45.</span> <span class="nav-text">AI: Artificial Intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tpami-ieee-transactions-on-pattern-analysis-and-machine-intelligence"><span class="nav-number">1.46.</span> <span class="nav-text">TPAMI:
+IEEE Transactions on Pattern Analysis and Machine Intelligence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ijcv-international-journal-of-computer-vision"><span class="nav-number">1.47.</span> <span class="nav-text">IJCV:
+International Journal of Computer Vision</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jmlr-journal-of-machine-learning-research"><span class="nav-number">1.48.</span> <span class="nav-text">JMLR: Journal of
+Machine Learning Research</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E5%8F%89%E7%BB%BC%E5%90%88%E6%96%B0%E5%85%B4"><span class="nav-number">1.49.</span> <span class="nav-text">4、交叉&#x2F;综合&#x2F;新兴：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-3"><span class="nav-number">1.50.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#www-international-world-wide-web-conference"><span class="nav-number">1.51.</span> <span class="nav-text">WWW: International
+World Wide Web Conference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rtss-ieee-real-time-systems-symposium"><span class="nav-number">1.52.</span> <span class="nav-text">RTSS: IEEE Real-Time
+Systems Symposium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wine-conference-on-web-and-internet-economics"><span class="nav-number">1.53.</span> <span class="nav-text">WINE: Conference
+on Web and Internet Economics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-3"><span class="nav-number">1.54.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jacm-journal-of-the-acm"><span class="nav-number">1.55.</span> <span class="nav-text">JACM: Journal of the ACM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proc.-ieee-proceedings-of-the-ieee"><span class="nav-number">1.56.</span> <span class="nav-text">Proc. IEEE: Proceedings of
+the IEEE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scis-science-china-information-sciences"><span class="nav-number">1.57.</span> <span class="nav-text">SCIS: Science China
+Information Sciences</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.58.</span> <span class="nav-text">5、计算机网络：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-4"><span class="nav-number">1.59.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sigcomm-acm-international-conference-on-applications-technologies-architectures-and-protocols-for-computer-communication"><span class="nav-number">1.60.</span> <span class="nav-text">SIGCOMM:
+ACM International Conference on Applications, Technologies,
+Architectures, and Protocols for Computer Communication</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mobicom-acm-international-conference-on-mobile-computing-and-networking"><span class="nav-number">1.61.</span> <span class="nav-text">MobiCom:
+ACM International Conference on Mobile Computing and Networking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#infocom-ieee-international-conference-on-computer-communications"><span class="nav-number">1.62.</span> <span class="nav-text">INFOCOM:
+IEEE International Conference on Computer Communications</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nsdi-symposium-on-network-system-design-and-implementation"><span class="nav-number">1.63.</span> <span class="nav-text">NSDI:
+Symposium on Network System Design and Implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-4"><span class="nav-number">1.64.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsac-ieee-journal-on-selected-areas-in-communications"><span class="nav-number">1.65.</span> <span class="nav-text">JSAC:
+IEEE Journal on Selected Areas in Communications</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tmc-ieee-transactions-on-mobile-computing"><span class="nav-number">1.66.</span> <span class="nav-text">TMC: IEEE
+Transactions on Mobile Computing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ton-ieeeacm-transactions-on-networking"><span class="nav-number">1.67.</span> <span class="nav-text">TON: IEEE&#x2F;ACM
+Transactions on Networking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8"><span class="nav-number">1.68.</span> <span class="nav-text">6、网络与信息安全：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-5"><span class="nav-number">1.69.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ccs-acm-conference-on-computer-and-communications-security"><span class="nav-number">1.70.</span> <span class="nav-text">CCS:
+ACM Conference on Computer and Communications Security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eurocrypt-international-conference-on-the-theory-and-applications-of-cryptographic-techniques"><span class="nav-number">1.71.</span> <span class="nav-text">EUROCRYPT:
+International Conference on the Theory and Applications of Cryptographic
+Techniques</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sp-ieee-symposium-on-security-and-privacy"><span class="nav-number">1.72.</span> <span class="nav-text">S&amp;P: IEEE
+Symposium on Security and Privacy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#crypto-international-cryptology-conference"><span class="nav-number">1.73.</span> <span class="nav-text">CRYPTO:
+International Cryptology Conference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usenix-security-usenix-security-symposium"><span class="nav-number">1.74.</span> <span class="nav-text">USENIX Security:
+USENIX Security Symposium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ndss-network-and-distributed-system-security-symposium"><span class="nav-number">1.75.</span> <span class="nav-text">NDSS:
+Network and Distributed System Security Symposium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-5"><span class="nav-number">1.76.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tdsc-ieee-transactions-on-dependable-and-secure-computing"><span class="nav-number">1.77.</span> <span class="nav-text">TDSC:
+IEEE Transactions on Dependable and Secure Computing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tifs-ieee-transactions-on-information-forensics-and-security"><span class="nav-number">1.78.</span> <span class="nav-text">TIFS:
+IEEE Transactions on Information Forensics and Security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#journal-of-cryptology"><span class="nav-number">1.79.</span> <span class="nav-text">Journal of Cryptology</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80"><span class="nav-number">1.80.</span> <span class="nav-text">7、软件工程&#x2F;系统软件&#x2F;程序设计语言：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-6"><span class="nav-number">1.81.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pldi-acm-sigplan-conference-on-programming-language-design-and-implementation"><span class="nav-number">1.82.</span> <span class="nav-text">PLDI:
+ACM SIGPLAN Conference on Programming Language Design and
+Implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#popl-acm-sigplan-sigact-symposium-on-principles-of-programming-languages"><span class="nav-number">1.83.</span> <span class="nav-text">POPL:
+ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fseesec-acm-joint-european-software-engineering-conference-and-symposium-on-the-foundations-of-software-engineering"><span class="nav-number">1.84.</span> <span class="nav-text">FSE&#x2F;ESEC:
+ACM Joint European Software Engineering Conference and Symposium on the
+Foundations of Software Engineering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sosp-acm-symposium-on-operating-systems-principles"><span class="nav-number">1.85.</span> <span class="nav-text">SOSP: ACM
+Symposium on Operating Systems Principles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oopsla-conference-on-object-oriented-programming-systems-languages-and-applications"><span class="nav-number">1.86.</span> <span class="nav-text">OOPSLA:
+Conference on Object-Oriented Programming Systems, Languages, and
+Applications</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ase-international-conference-on-automated-software-engineering"><span class="nav-number">1.87.</span> <span class="nav-text">ASE:
+International Conference on Automated Software Engineering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#icse-international-conference-on-software-engineering"><span class="nav-number">1.88.</span> <span class="nav-text">ICSE:
+International Conference on Software Engineering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#issta-international-symposium-on-software-testing-and-analysis"><span class="nav-number">1.89.</span> <span class="nav-text">ISSTA:
+International Symposium on Software Testing and Analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#osdi-usenix-symposium-on-operating-systems-design-and-implementation"><span class="nav-number">1.90.</span> <span class="nav-text">OSDI:
+USENIX Symposium on Operating Systems Design and Implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fm-international-symposium-on-formal-methods"><span class="nav-number">1.91.</span> <span class="nav-text">FM: International
+Symposium on Formal Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%90%86%E8%AE%BA"><span class="nav-number">1.92.</span> <span class="nav-text">8、计算机科学理论：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-7"><span class="nav-number">1.93.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stoc-acm-symposium-on-the-theory-of-computing"><span class="nav-number">1.94.</span> <span class="nav-text">STOC: ACM
+Symposium on the Theory of Computing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#soda-acm-siam-symposium-on-discrete-algorithms"><span class="nav-number">1.95.</span> <span class="nav-text">SODA: ACM-SIAM
+Symposium on Discrete Algorithms</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cav-international-conference-on-computer-aided-verification"><span class="nav-number">1.96.</span> <span class="nav-text">CAV:
+International Conference on Computer Aided Verification</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#focs-ieee-annual-symposium-on-foundations-of-computer-science"><span class="nav-number">1.97.</span> <span class="nav-text">FOCS:
+IEEE Annual Symposium on Foundations of Computer Science</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lics-acmieee-symposium-on-logic-in-computer-science"><span class="nav-number">1.98.</span> <span class="nav-text">LICS:
+ACM&#x2F;IEEE Symposium on Logic in Computer Science</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-6"><span class="nav-number">1.99.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tit-ieee-transactions-on-information-theory"><span class="nav-number">1.100.</span> <span class="nav-text">TIT: IEEE
+Transactions on Information Theory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iandc-information-and-computation"><span class="nav-number">1.101.</span> <span class="nav-text">IANDC: Information and
+Computation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sicomp-siam-journal-on-computing"><span class="nav-number">1.102.</span> <span class="nav-text">SICOMP: SIAM Journal on
+Computing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E4%B8%8E%E5%A4%9A%E5%AA%92%E4%BD%93"><span class="nav-number">1.103.</span> <span class="nav-text">9、计算机图形学与多媒体：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-8"><span class="nav-number">1.104.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#acm-mm-acm-international-conference-on-multimedia"><span class="nav-number">1.105.</span> <span class="nav-text">ACM MM: ACM
+International Conference on Multimedia</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#siggraph-acm-special-interest-group-on-computer-graphics"><span class="nav-number">1.106.</span> <span class="nav-text">SIGGRAPH:
+ACM Special Interest Group on Computer Graphics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vr-ieee-virtual-reality"><span class="nav-number">1.107.</span> <span class="nav-text">VR: IEEE Virtual Reality</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ieee-vis-ieee-visualization-conference"><span class="nav-number">1.108.</span> <span class="nav-text">IEEE VIS: IEEE
+Visualization Conference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-7"><span class="nav-number">1.109.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tog-acm-transactions-on-graphics"><span class="nav-number">1.110.</span> <span class="nav-text">TOG: ACM Transactions on
+Graphics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tip-ieee-transactions-on-image-processing"><span class="nav-number">1.111.</span> <span class="nav-text">TIP: IEEE
+Transactions on Image Processing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tvcg-ieee-transactions-on-visualization-and-computer-graphics"><span class="nav-number">1.112.</span> <span class="nav-text">TVCG:
+IEEE Transactions on Visualization and Computer Graphics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E4%B8%8E%E6%99%AE%E9%80%82%E8%AE%A1%E7%AE%97"><span class="nav-number">1.113.</span> <span class="nav-text">10、人机交互与普适计算：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE-9"><span class="nav-number">1.114.</span> <span class="nav-text">会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cscw-acm-conference-on-computer-supported-cooperative-work-and-social-computing"><span class="nav-number">1.115.</span> <span class="nav-text">CSCW:
+ACM Conference On Computer-Supported Cooperative Work And Social
+Computing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chi-acm-conference-on-human-factors-in-computing-systems"><span class="nav-number">1.116.</span> <span class="nav-text">CHI:
+ACM Conference on Human Factors in Computing Systems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ubicomp-acm-international-joint-conference-on-pervasive-and-ubiquitous-computing"><span class="nav-number">1.117.</span> <span class="nav-text">UbiComp:
+ACM international joint conference on Pervasive and Ubiquitous
+Computing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uist-acm-symposium-on-user-interface-software-and-technology"><span class="nav-number">1.118.</span> <span class="nav-text">UIST:
+ACM Symposium on User Interface Software and Technology</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E5%88%8A-8"><span class="nav-number">1.119.</span> <span class="nav-text">期刊：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tochi-acm-transactions-on-computer-human-interaction"><span class="nav-number">1.120.</span> <span class="nav-text">TOCHI: ACM
+Transactions on Computer-Human Interaction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ijhcs-international-journal-of-human-computer-studies"><span class="nav-number">1.121.</span> <span class="nav-text">IJHCS:
+International Journal of Human-Computer Studies</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ccf%E6%8E%A8%E8%8D%90%E4%BC%9A%E8%AE%AE%E5%92%8C%E6%9C%9F%E5%88%8A%E5%AE%8C%E6%95%B4ccf%E5%AE%98%E7%BD%91%E4%B9%9F%E6%9C%89call4papers---ccf%E6%8E%A8%E8%8D%90%E5%88%97%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">CCF推荐会议和期刊完整（CCF官网也有）：Call4Papers -
+CCF推荐列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E5%86%85%E5%AE%B9dblp-browse-conferences-workshops"><span class="nav-number">3.</span> <span class="nav-text">完整内容：dblp: Browse Conferences
+&amp; Workshops</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E6%9C%AF%E7%95%8C%E8%AE%A4%E5%8F%AF%E9%A1%B6%E7%BA%A7%E4%BC%9A%E8%AE%AE%E8%AE%BA%E6%96%87%E8%80%8C%E5%85%B6%E4%BB%96%E9%A2%86%E5%9F%9F%E5%87%A0%E4%B9%8E%E9%83%BD%E6%98%AF%E5%8F%AA%E8%AE%A4%E5%8F%AF%E9%A1%B6%E7%BA%A7%E6%9C%9F%E5%88%8A---%E7%9F%A5%E4%B9%8E-zhihu.com"><span class="nav-number">4.</span> <span class="nav-text">为什么计算机学术界认可顶级会议论文，而其他领域几乎都是只认可顶级期刊？
+- 知乎 (zhihu.com)</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Anduril</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没写</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Anduril</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

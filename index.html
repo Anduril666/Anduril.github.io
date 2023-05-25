@@ -14,8 +14,6 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
@@ -154,6 +152,617 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8A%A5%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Anduril">
+      <meta itemprop="description" content="这个人很懒，什么都没写">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再不记记就忘了">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/04/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8A%A5%E5%91%8A/" class="post-title-link" itemprop="url">博客搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-21 13:56:09 / 修改时间：13:56:56" itemprop="dateCreated datePublished" datetime="2024-04-21T13:56:09+08:00">2024-04-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="作业内容">作业内容</h3>
+<p>用Hexo搭建个人blog，主要功能是记一下自己的学习笔记和随笔（希望会真的写）</p>
+<h3 id="环境配置">环境配置</h3>
+<h4 id="git-和-github-ssh-key">Git 和 Github SSH key</h4>
+<p>安装成功后，需要将Git与GitHub账户进行绑定，在Git
+Bash中设置用户信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.name <span class="string">&quot;github 用户名&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.email <span class="string">&quot;github 注册邮箱&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p>生成ssh密钥：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ssh-keygen -t rsa -C <span class="string">&quot;github 注册邮箱&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p>找到生成的id_rsa.pub文件，复制其中密钥至<a target="_blank" rel="noopener" href="https://github.com/settings/keys">GitHub-settings-keys</a>新建一个SSH
+key即可。</p>
+<h4 id="node.js">Node.Js</h4>
+<p>Windows直接在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.Js官网</a>下载即可。
+下载完成后可在终端输入以下命令查看node和npm是否成功安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">node -v</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm -v</span></span><br></pre></td></tr></table></figure>
+<h4 id="hexo">Hexo</h4>
+<p>新建一个路径用于存放blog文件，在Git
+Bash中cd到该路径下，使用npm命令安装Hexo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm i hexo-cli -g</span></span><br></pre></td></tr></table></figure>
+<p>初始化并安装组件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init .</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
+<h4 id="github-pages">Github Pages</h4>
+<p>新建一个public仓库，仓库名为：<em>”Github用户名”.github.io</em>
+（必须以此为用户名，否则后续GitHub
+Pages的url会出现问题），在仓库设置中的_”Pages”<em>部分选择</em>‘master’_分支作为source。
+GitHub Pages 配置保存后，个人主页的网站将会自动发布到
+https://“GitHub用户名”.github.io，并且可以在仓库的设置页面中的 “GitHub
+Pages” 部分查看网页更新情况。</p>
+<h4 id="部署至github">部署至GitHub</h4>
+<p>修改blog目录中的站点配置文件_config.yml_，加入以下内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repo-url&gt;</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>完成后通过以下命令即可将本地内容推送至Github
+repository中，并可在浏览器中访问</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate --deploy</span></span><br></pre></td></tr></table></figure>
+<h4 id="开写">开写</h4>
+<p>通过如下命令在_blog/source/_posts_路径下生成新的Markdown文件，修改.md文件并推送至GitHub
+repository后，即可在网页中查看博客内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo n <span class="string">&quot;title&quot;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="blog页面布局-设计思路">blog页面布局 &amp; 设计思路</h2>
+<p>blog的主题使用的是next，因为很简洁</p>
+<p>主要有首页、标签和分类</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/21/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Anduril">
+      <meta itemprop="description" content="这个人很懒，什么都没写">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再不记记就忘了">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/04/21/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/" class="post-title-link" itemprop="url">数据降维</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-21 12:15:02 / 修改时间：13:40:58" itemprop="dateCreated datePublished" datetime="2024-04-21T12:15:02+08:00">2024-04-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>降维方法认为，不同维度之间的数据包含相关性，所以可以通过某种映射方法将数据从高维空间映射到低维空间。</p>
+<p>显然，降维必然会带来信息丢失，所以数据降维方法希望将降维带来的信息丢失造成的影响降低。</p>
+<h2 id="判断数据是否适合降维充分性检测">判断数据是否适合降维（充分性检测）</h2>
+<p>如果数据不同维度之间的联系非常小，那么无论怎么设计降维方法都意义不大，降维等价于信息的白白丢失。所以通常我们需要先判断数据是否适合做直接的降维，如果数据本身就不适合降维，那么可能需要在降维之前优先考虑联合维度以构造数据间的相关性。</p>
+<h3 id="协方差">1、协方差</h3>
+<p>当谈论数据之间的相关性时，非常自然的能够想到通过协方差进行度量：
+<span class="math display">\[
+\sigma(x,y)=\frac{1}{n-1}\sum_{a}^{b}(x_i-\bar{x})(y_i-\bar{y})
+\]</span> 构造协方差矩阵： <span class="math display">\[
+\Sigma=\begin{bmatrix}\sigma(x_1,x_1)&amp;\cdots&amp;\sigma(x_1,x_d)\\\vdots&amp;\ddots&amp;\vdots\\\sigma(x_d,x_1)&amp;\cdots&amp;\sigma(x_d,x_d)\end{bmatrix}\in
+R^{d\times d}
+\]</span>
+协方差为正意味着两个维度为正相关，反之则为负相关。值越大则越相关。</p>
+<p>大部分的相关系数都是基于协方差构造，本质大同小异。</p>
+<h3 id="kmo检验">2、KMO检验</h3>
+<p>主成分分析之前，通常通过KMO检验判断原始数据是否适合进行主成分分析。</p>
+<p><strong>KMO检验值越大证明越适合进行主成分分析</strong>，通常认为值在0.6以下时不适合进行主成分分析。</p>
+<p>python代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27; 检查变量间的相关性和偏相关性，取值在0-1之间；</span></span><br><span class="line"><span class="string">    KMO统计量越接近1，变量间的相关性越强，偏相关性越弱，因子分析的效果越好</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">from</span> factor_analyzer.factor_analyzer <span class="keyword">import</span> calculate_kmo</span><br><span class="line"></span><br><span class="line"><span class="comment"># KMO检验</span></span><br><span class="line"><span class="comment">#kmo_all, kmo_model = calculate_kmo(df)</span></span><br><span class="line">kmo = calculate_kmo(df)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;KMO检验结果为：<span class="subst">&#123;kmo[<span class="number">1</span>]&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="bartlett球形度检验">3、Bartlett球形度检验</h3>
+<p>Bartlett球形度检验是一种用于检验原始数据的各个变量之间是否具有较强的线性相关性的方法，是主成分分析的效度检验指标之一。</p>
+<p>Bartlett球形度检验的原假设是各个变量之间不存在线性相关性，即相关系数矩阵是一个单位阵。如果检验结果的p值<strong>小于</strong>显著性水平（通常为0.05），则拒绝原假设，<strong>认为各个变量之间存在线性相关性</strong>，数据<strong>适合</strong>进行主成分分析。相反，如果检验结果的p值大于显著性水平，则接受原假设，认为各个变量之间不存在线性相关性，数据不适合进行主成分分析。</p>
+<p>python代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> factor_analyzer.factor_analyzer <span class="keyword">import</span> calculate_bartlett_sphericity</span><br><span class="line"></span><br><span class="line"><span class="comment">#进行球状检验</span></span><br><span class="line">chi_square_value, p_value = calculate_bartlett_sphericity(df)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;卡方=<span class="subst">&#123;chi_square_value&#125;</span>,P值=<span class="subst">&#123;p_value&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="降维方法">降维方法</h2>
+<!-- <img src=".\数据降维\降维方法总览.jpg"> -->
+<figure>
+<img src="/2024/04/21/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/降维方法总览.jpg" alt="降维方法总览">
+<figcaption aria-hidden="true">降维方法总览</figcaption>
+</figure>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/408890116">降维方法综述 - 知乎
+(zhihu.com)</a></p>
+<h2 id="线性降维方法">线性降维方法</h2>
+<h3 id="ldalinear-discriminant-analysis">1、LDA（Linear discriminant
+analysis）</h3>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/34305879/answer/2182905513">如何理解线性判别分析（LDA）算法？能够简洁明了地说明一下LDA算法的中心思想吗？
+- 知乎 (zhihu.com)</a></p>
+<p>LDA算法的思想是将数据投影到低维空间之后，使得同一类数据尽可能的紧凑，不同类的数据尽可能分散。</p>
+<p><strong>两个假设：</strong></p>
+<ol type="1">
+<li><strong>原始数据根据样本均值分类</strong></li>
+<li><strong>不同类的样本有相同的协方差矩阵</strong></li>
+</ol>
+<p>当然，在实际情况中，不可能满足以上两个假设。但是当数据主要是由均值来区分的时候，LDA一般都可以取得很好的效果。</p>
+<p><em>如果假设不同的维度可以描述的性质可以被分为几类，使用LDA似乎也能自圆其说。</em></p>
+<p><em>但是我们不知道他应该怎么分类，所以抛弃</em></p>
+<h3 id="pca">2、PCA</h3>
+<p>主成分分析对不同维度之间的线性相关性要求较高，尝试过后效果不佳。</p>
+<h3 id="fafactor-analysis">3、FA（Factor Analysis）</h3>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/351322418">因子分析(Factor
+Analysis)的原理与使用 - 知乎 (zhihu.com)</a></p>
+<p>对于p维观测变量，FA假设每一个维度的变量可以表示为m个共因子和p个特殊因子的线性组合，其中m&lt;p，从而实现了降维。
+<span class="math display">\[
+\begin{aligned}&amp;X_1-\mu_1=l_{11}F_1+l_{12}F_2+\ldots+l_{1m}F_m+\epsilon_1\\\\&amp;X_2-\mu_2=l_{21}F_1+l_{22}F_2+\ldots+l_{2m}F_m+\epsilon_2\\\\&amp;\ldots\\\\&amp;X_p-\mu_p=l_{p1}F_1+l_{p2}F_2+\ldots+l_{pm}F_m+\epsilon_p\end{aligned}
+\]</span> 有矩阵形式 <span class="math display">\[
+X=\mu+L*F+\epsilon
+\]</span></p>
+<h4 id="因子旋转">因子旋转</h4>
+<p>直接构造的主因子可能不具有很好的“解释性”或者“不好用”，所以我们期望通过不改变因子间相对关系的前提下进行旋转，使得主因子的解释性更强。</p>
+<!-- <img src=".\数据降维\FA_因子旋转_正交.jpg" alt="img" style="zoom:100%;" > -->
+<figure>
+<img src="/2024/04/21/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/FA_因子旋转_正交.jpg" alt="FA_因子旋转_正交">
+<figcaption aria-hidden="true">FA_因子旋转_正交</figcaption>
+</figure>
+<p>对于多维的主因子，我们通常保持因子之间的正交关系进行旋转，具体做法是使用<strong>Varimax方法</strong>。</p>
+<p>实验过程中，FA方法在面对高维数据时效率相当低，怀疑低效原因来自与因子旋转的过程。</p>
+<h2 id="非线性降维方法">非线性降维方法</h2>
+<h3 id="llelocal-linear-embedding">1、LLE（Local Linear Embedding）</h3>
+<p>LLE旨在处理流形（manifold）建模上的降维问题。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/622263134">几何学中最伟大的发明之一——流形，其背后的几何直觉与数学方法
+- 知乎 (zhihu.com)</a></p>
+<p><em>流形是一个可以在局部范围内近似为欧几里得空间的空间</em></p>
+<p>地球是圆的，但是地是平的。</p>
+<p><strong>思想</strong>：根据流形的性质，一个点可以被周围的k个点线性表示，所以用
+KNN等方法找到临近的k个点，获得一组权重，然后期望这个权重在维度更低的k个向量上也可以组合为该点的低维表示。</p>
+<p><em>简单来说，LLE降维最大的特点是维护了流形局部线性的性质</em></p>
+<h4 id="算法过程">算法过程：</h4>
+<p><strong>step1：</strong></p>
+<p>通过KNN求得每个数据的k近邻点 <span class="math display">\[
+N_i=KNN(x_i,k),N_i=[x_{1i},\ldots,x_{ki}]
+\]</span> <strong>step2：</strong></p>
+<p>求解权重系数矩阵W，即求解 <span class="math display">\[
+\arg\min_W\sum_{i=1}^N\|x_i-\sum_{j=1}^kw_{ji}x_{ji}\|^2,\\
+s.t.\sum_{j=1}^kw_{ji}=1
+\]</span> 输入： <span class="math display">\[
+X=[x_{1},x_{2},\ldots,x_{N}],D\times N
+\]</span> 权重： <span class="math display">\[
+w=[w_1,w_2,\ldots,w_N],k\times N
+\]</span> <strong>step3：</strong></p>
+<p>映射到低维空间 <span class="math display">\[
+\begin{aligned}\arg\min_Y\Psi(Y)&amp;=\sum_{i=1}^N\|y_i-\sum_{j=1}^kw_{ji}y_{ji}\|^2,\\&amp;s.t.\sum_{i=1}^Ny_i=0,\\
+&amp;\sum_{i=1}^Ny_iy_i^T=NI_{d\times d}\end{aligned}
+\]</span></p>
+<h4 id="示意图">示意图</h4>
+<p>原图：</p>
+<!-- <img src=".\数据降维\LLE_swiss_roll_original_data.jpg"> -->
+<p><img src="/2024/04/21/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/LLE_swiss_roll_original_data.jpg" alt="LLE_swiss_roll_original_data"> 降维后：</p>
+<!-- <img src=".\数据降维\LLE_swiss_roll_new_data.jpg" style="zoom:120%;"> -->
+<figure>
+<img src="/2024/04/21/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/LLE_swiss_roll_new_data.jpg" alt="LLE_swiss_roll_new_data">
+<figcaption aria-hidden="true">LLE_swiss_roll_new_data</figcaption>
+</figure>
+<h3 id="lelaplacian-eigenmaps">2、LE（Laplacian Eigenmaps）</h3>
+<p>https://www2.imm.dtu.dk/projects/manifold/Papers/Laplacian.pdf</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/496040201">Laplacian EigenMaps
+- 知乎 (zhihu.com)</a></p>
+<p>LE从图的角度构建数据间的关系。图中的每个顶点代表一个数据，每一条边权代表数据之间的相似程度，越相似则权值越大。</p>
+<p>LE假设每一点只与k个相邻点相似，与其他点的相似度为0。</p>
+<p><em>简单来说，LE维护了降维之后点间的相似性。</em></p>
+<h4 id="算法流程">算法流程</h4>
+<p><strong>step1：</strong></p>
+<p>构造图；</p>
+<p>通过KNN求k个邻近点。</p>
+<p><strong>step2：</strong></p>
+<p>赋权</p>
+<p>Heat kernel: <span class="math display">\[
+W_{ij}=e^{-\frac{\|\mathbf{x}_i-\mathbf{x}_j\|^2}t}
+\]</span> 或Simple-minded: <span class="math display">\[
+W_{ij}=1
+\]</span> <strong>step3:</strong></p>
+<p>Eigenmaps，即可等效为优化问题 <span class="math display">\[
+\arg\min_{y}y^{T}Ly,\\
+s.t.\ y^TDy=1
+\]</span> 其中L为Laplacian Matrix，L=D-W</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/21/%E5%B8%B8%E8%A7%81%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Anduril">
+      <meta itemprop="description" content="这个人很懒，什么都没写">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再不记记就忘了">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/04/21/%E5%B8%B8%E8%A7%81%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">常见会议期刊总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-21 12:09:53 / 修改时间：12:11:49" itemprop="dateCreated datePublished" datetime="2024-04-21T12:09:53+08:00">2024-04-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="ccf-a或高认可度">CCF-A（或高认可度）：</h3>
+<h4
+id="计算机体系结构高性能计算存储系统">1、计算机体系结构/高性能计算/存储系统</h4>
+<h4 id="会议">会议：</h4>
+<h4
+id="asplos-architectural-support-for-programming-languages-and-operating-systems">ASPLOS:
+Architectural Support for Programming Languages and Operating
+Systems</h4>
+<h4
+id="ppopp-acm-sigplan-symposium-on-principles-practice-of-parallel-programming">PPoPP:
+ACM SIGPLAN Symposium on Principles &amp; Practice of Parallel
+Programming</h4>
+<h4 id="fast-usenix-conference-on-file-and-storage-technologies">FAST:
+USENIX Conference on File and Storage Technologies</h4>
+<h4 id="dac-design-automation-conference">DAC : Design Automation
+Conference</h4>
+<h4
+id="hpca-ieee-international-symposium-on-high-performance-computer-architecture">HPCA:
+IEEE International Symposium on High Performance Computer
+Architecture</h4>
+<h4
+id="micro-ieeeacm-international-symposium-on-microarchitecture">MICRO:
+IEEE/ACM International Symposium on Microarchitecture</h4>
+<h4
+id="sc-international-conference-for-high-performance-computing-networking-storage-and-analysis">SC:
+International Conference for High Performance Computing, Networking,
+Storage, and Analysis</h4>
+<h4 id="isca-international-symposium-on-computer-architecture">ISCA:
+International Symposium on Computer Architecture</h4>
+<h4 id="usenix-atc-usenix-annual-technical-conference">USENIX ATC:
+USENIX Annual Technical Conference</h4>
+<h4 id="eurosys-european-conference-on-computer-systems">EuroSys:
+European Conference on Computer Systems</h4>
+<h4 id="期刊">期刊：</h4>
+<h4 id="tocs-acm-transactions-on-computer-systems">TOCS: ACM
+Transactions on Computer Systems</h4>
+<h4 id="tos-acm-transactions-on-storage">TOS: ACM Transactions on
+Storage</h4>
+<h4
+id="tcad-ieee-transactions-on-computer-aided-design-of-integrated-circuits-and-systems">TCAD:
+IEEE Transactions on Computer-Aided Design of Integrated Circuits and
+Systems</h4>
+<h4 id="tc-ieee-transactions-on-computers">TC: IEEE Transactions on
+Computers</h4>
+<h4
+id="tpds-ieee-transactions-on-parallel-and-distributed-systems">TPDS:
+IEEE Transactions on Parallel and Distributed Systems</h4>
+<h4
+id="taco-acm-transactions-on-architecture-and-code-optimization">TACO:
+ACM Transactions on Architecture and Code Optimization</h4>
+<h4 id="数据库数据挖掘内容检索">2、数据库/数据挖掘/内容检索</h4>
+<h4 id="会议-1">会议：</h4>
+<h4 id="sigmod-acm-sigmod-conference">SIGMOD: ACM SIGMOD Conference</h4>
+<h4
+id="sigkdd-acm-sigkdd-conference-on-knowledge-discovery-and-data-mining">SIGKDD:
+ACM SIGKDD Conference on Knowledge Discovery and Data Mining</h4>
+<h4 id="icde-ieee-international-conference-on-data-engineering">ICDE:
+IEEE International Conference on Data Engineering</h4>
+<h4
+id="sigir-international-acm-sigir-conference-on-research-and-development-in-information-retrieval">SIGIR:
+International ACM SIGIR Conference on Research and Development in
+Information Retrieval</h4>
+<h4 id="vldb-international-conference-on-very-large-data-bases">VLDB:
+International Conference on Very Large Data Bases</h4>
+<h4 id="期刊-1">期刊：</h4>
+<h4 id="tods-acm-transactions-on-database-systems">TODS: ACM
+Transactions on Database Systems</h4>
+<h4 id="tois-acm-transactions-on-information-systems">TOIS: ACM
+Transactions on Information Systems</h4>
+<h4 id="tkde-ieee-transactions-on-knowledge-and-data-engineering">TKDE:
+IEEE Transactions on Knowledge and Data Engineering</h4>
+<h4 id="vldbj-the-vldb-journal">VLDBJ: The VLDB Journal</h4>
+<h4 id="人工智能">3、人工智能：</h4>
+<h4 id="会议-2">会议：</h4>
+<h4 id="aaai-aaai-conference-on-artificial-intelligence">AAAI: AAAI
+Conference on Artificial Intelligence</h4>
+<h4
+id="neurips-conference-on-neural-information-processing-systems">NeurIPS:
+Conference on Neural Information Processing Systems</h4>
+<h4
+id="acl-annual-meeting-of-the-association-for-computational-linguistics">ACL:
+Annual Meeting of the Association for Computational Linguistics</h4>
+<h4
+id="cvpr-ieeecvf-computer-vision-and-pattern-recognition-conference">CVPR:
+IEEE/CVF Computer Vision and Pattern Recognition Conference</h4>
+<h4 id="iccv-international-conference-on-computer-vision">ICCV:
+International Conference on Computer Vision</h4>
+<h4 id="icml-international-conference-on-machine-learning">ICML:
+International Conference on Machine Learning</h4>
+<h4
+id="ijcai-international-joint-conference-on-artificial-intelligence">IJCAI:
+International Joint Conference on Artificial Intelligence</h4>
+<h4
+id="iclr-international-conference-on-learning-representations高认可">ICLR:
+International Conference On Learning Representations（高认可）</h4>
+<h4 id="eccv-european-conference-on-computer-vision较高认可">ECCV:
+European Conference on Computer Vision（较高认可）</h4>
+<h4
+id="emnlp-conference-on-empirical-methods-in-natural-language-processing较高认可">EMNLP:
+Conference on Empirical Methods in Natural Language
+Processing（较高认可）</h4>
+<h4 id="期刊-2">期刊：</h4>
+<h4 id="ai-artificial-intelligence">AI: Artificial Intelligence</h4>
+<h4
+id="tpami-ieee-transactions-on-pattern-analysis-and-machine-intelligence">TPAMI:
+IEEE Transactions on Pattern Analysis and Machine Intelligence</h4>
+<h4 id="ijcv-international-journal-of-computer-vision">IJCV:
+International Journal of Computer Vision</h4>
+<h4 id="jmlr-journal-of-machine-learning-research">JMLR: Journal of
+Machine Learning Research</h4>
+<h4 id="交叉综合新兴">4、交叉/综合/新兴：</h4>
+<h4 id="会议-3">会议：</h4>
+<h4 id="www-international-world-wide-web-conference">WWW: International
+World Wide Web Conference</h4>
+<h4 id="rtss-ieee-real-time-systems-symposium">RTSS: IEEE Real-Time
+Systems Symposium</h4>
+<h4 id="wine-conference-on-web-and-internet-economics">WINE: Conference
+on Web and Internet Economics</h4>
+<h4 id="期刊-3">期刊：</h4>
+<h4 id="jacm-journal-of-the-acm">JACM: Journal of the ACM</h4>
+<h4 id="proc.-ieee-proceedings-of-the-ieee">Proc. IEEE: Proceedings of
+the IEEE</h4>
+<h4 id="scis-science-china-information-sciences">SCIS: Science China
+Information Sciences</h4>
+<h4 id="计算机网络">5、计算机网络：</h4>
+<h4 id="会议-4">会议：</h4>
+<h4
+id="sigcomm-acm-international-conference-on-applications-technologies-architectures-and-protocols-for-computer-communication">SIGCOMM:
+ACM International Conference on Applications, Technologies,
+Architectures, and Protocols for Computer Communication</h4>
+<h4
+id="mobicom-acm-international-conference-on-mobile-computing-and-networking">MobiCom:
+ACM International Conference on Mobile Computing and Networking</h4>
+<h4
+id="infocom-ieee-international-conference-on-computer-communications">INFOCOM:
+IEEE International Conference on Computer Communications</h4>
+<h4
+id="nsdi-symposium-on-network-system-design-and-implementation">NSDI:
+Symposium on Network System Design and Implementation</h4>
+<h4 id="期刊-4">期刊：</h4>
+<h4 id="jsac-ieee-journal-on-selected-areas-in-communications">JSAC:
+IEEE Journal on Selected Areas in Communications</h4>
+<h4 id="tmc-ieee-transactions-on-mobile-computing">TMC: IEEE
+Transactions on Mobile Computing</h4>
+<h4 id="ton-ieeeacm-transactions-on-networking">TON: IEEE/ACM
+Transactions on Networking</h4>
+<h4 id="网络与信息安全">6、网络与信息安全：</h4>
+<h4 id="会议-5">会议：</h4>
+<h4 id="ccs-acm-conference-on-computer-and-communications-security">CCS:
+ACM Conference on Computer and Communications Security</h4>
+<h4
+id="eurocrypt-international-conference-on-the-theory-and-applications-of-cryptographic-techniques">EUROCRYPT:
+International Conference on the Theory and Applications of Cryptographic
+Techniques</h4>
+<h4 id="sp-ieee-symposium-on-security-and-privacy">S&amp;P: IEEE
+Symposium on Security and Privacy</h4>
+<h4 id="crypto-international-cryptology-conference">CRYPTO:
+International Cryptology Conference</h4>
+<h4 id="usenix-security-usenix-security-symposium">USENIX Security:
+USENIX Security Symposium</h4>
+<h4 id="ndss-network-and-distributed-system-security-symposium">NDSS:
+Network and Distributed System Security Symposium</h4>
+<h4 id="期刊-5">期刊：</h4>
+<h4 id="tdsc-ieee-transactions-on-dependable-and-secure-computing">TDSC:
+IEEE Transactions on Dependable and Secure Computing</h4>
+<h4
+id="tifs-ieee-transactions-on-information-forensics-and-security">TIFS:
+IEEE Transactions on Information Forensics and Security</h4>
+<h4 id="journal-of-cryptology">Journal of Cryptology</h4>
+<h4
+id="软件工程系统软件程序设计语言">7、软件工程/系统软件/程序设计语言：</h4>
+<h4 id="会议-6">会议：</h4>
+<h4
+id="pldi-acm-sigplan-conference-on-programming-language-design-and-implementation">PLDI:
+ACM SIGPLAN Conference on Programming Language Design and
+Implementation</h4>
+<h4
+id="popl-acm-sigplan-sigact-symposium-on-principles-of-programming-languages">POPL:
+ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages</h4>
+<h4
+id="fseesec-acm-joint-european-software-engineering-conference-and-symposium-on-the-foundations-of-software-engineering">FSE/ESEC:
+ACM Joint European Software Engineering Conference and Symposium on the
+Foundations of Software Engineering</h4>
+<h4 id="sosp-acm-symposium-on-operating-systems-principles">SOSP: ACM
+Symposium on Operating Systems Principles</h4>
+<h4
+id="oopsla-conference-on-object-oriented-programming-systems-languages-and-applications">OOPSLA:
+Conference on Object-Oriented Programming Systems, Languages, and
+Applications</h4>
+<h4
+id="ase-international-conference-on-automated-software-engineering">ASE:
+International Conference on Automated Software Engineering</h4>
+<h4 id="icse-international-conference-on-software-engineering">ICSE:
+International Conference on Software Engineering</h4>
+<h4
+id="issta-international-symposium-on-software-testing-and-analysis">ISSTA:
+International Symposium on Software Testing and Analysis</h4>
+<h4
+id="osdi-usenix-symposium-on-operating-systems-design-and-implementation">OSDI:
+USENIX Symposium on Operating Systems Design and Implementation</h4>
+<h4 id="fm-international-symposium-on-formal-methods">FM: International
+Symposium on Formal Methods</h4>
+<h4 id="计算机科学理论">8、计算机科学理论：</h4>
+<h4 id="会议-7">会议：</h4>
+<h4 id="stoc-acm-symposium-on-the-theory-of-computing">STOC: ACM
+Symposium on the Theory of Computing</h4>
+<h4 id="soda-acm-siam-symposium-on-discrete-algorithms">SODA: ACM-SIAM
+Symposium on Discrete Algorithms</h4>
+<h4
+id="cav-international-conference-on-computer-aided-verification">CAV:
+International Conference on Computer Aided Verification</h4>
+<h4
+id="focs-ieee-annual-symposium-on-foundations-of-computer-science">FOCS:
+IEEE Annual Symposium on Foundations of Computer Science</h4>
+<h4 id="lics-acmieee-symposium-on-logic-in-computer-science">LICS:
+ACM/IEEE Symposium on Logic in Computer Science</h4>
+<h4 id="期刊-6">期刊：</h4>
+<h4 id="tit-ieee-transactions-on-information-theory">TIT: IEEE
+Transactions on Information Theory</h4>
+<h4 id="iandc-information-and-computation">IANDC: Information and
+Computation</h4>
+<h4 id="sicomp-siam-journal-on-computing">SICOMP: SIAM Journal on
+Computing</h4>
+<h4 id="计算机图形学与多媒体">9、计算机图形学与多媒体：</h4>
+<h4 id="会议-8">会议：</h4>
+<h4 id="acm-mm-acm-international-conference-on-multimedia">ACM MM: ACM
+International Conference on Multimedia</h4>
+<h4
+id="siggraph-acm-special-interest-group-on-computer-graphics">SIGGRAPH:
+ACM Special Interest Group on Computer Graphics</h4>
+<h4 id="vr-ieee-virtual-reality">VR: IEEE Virtual Reality</h4>
+<h4 id="ieee-vis-ieee-visualization-conference">IEEE VIS: IEEE
+Visualization Conference</h4>
+<h4 id="期刊-7">期刊：</h4>
+<h4 id="tog-acm-transactions-on-graphics">TOG: ACM Transactions on
+Graphics</h4>
+<h4 id="tip-ieee-transactions-on-image-processing">TIP: IEEE
+Transactions on Image Processing</h4>
+<h4
+id="tvcg-ieee-transactions-on-visualization-and-computer-graphics">TVCG:
+IEEE Transactions on Visualization and Computer Graphics</h4>
+<h4 id="人机交互与普适计算">10、人机交互与普适计算：</h4>
+<h4 id="会议-9">会议：</h4>
+<h4
+id="cscw-acm-conference-on-computer-supported-cooperative-work-and-social-computing">CSCW:
+ACM Conference On Computer-Supported Cooperative Work And Social
+Computing</h4>
+<h4 id="chi-acm-conference-on-human-factors-in-computing-systems">CHI:
+ACM Conference on Human Factors in Computing Systems</h4>
+<h4
+id="ubicomp-acm-international-joint-conference-on-pervasive-and-ubiquitous-computing">UbiComp:
+ACM international joint conference on Pervasive and Ubiquitous
+Computing</h4>
+<h4
+id="uist-acm-symposium-on-user-interface-software-and-technology">UIST:
+ACM Symposium on User Interface Software and Technology</h4>
+<h4 id="期刊-8">期刊：</h4>
+<h4 id="tochi-acm-transactions-on-computer-human-interaction">TOCHI: ACM
+Transactions on Computer-Human Interaction</h4>
+<h4 id="ijhcs-international-journal-of-human-computer-studies">IJHCS:
+International Journal of Human-Computer Studies</h4>
+<h3
+id="ccf推荐会议和期刊完整ccf官网也有call4papers---ccf推荐列表">CCF推荐会议和期刊完整（CCF官网也有）：<a
+target="_blank" rel="noopener" href="http://123.57.137.208/ccf/ccf-1.jsp">Call4Papers -
+CCF推荐列表</a></h3>
+<h3 id="完整内容dblp-browse-conferences-workshops">完整内容：<a
+target="_blank" rel="noopener" href="https://dblp.org/db/conf/index.html">dblp: Browse Conferences
+&amp; Workshops</a></h3>
+<h3
+id="为什么计算机学术界认可顶级会议论文而其他领域几乎都是只认可顶级期刊---知乎-zhihu.com"><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/54142181/answer/2545936843">为什么计算机学术界认可顶级会议论文，而其他领域几乎都是只认可顶级期刊？
+- 知乎 (zhihu.com)</a></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/17/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -192,19 +801,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
@@ -285,7 +904,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -313,7 +932,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -370,6 +989,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
